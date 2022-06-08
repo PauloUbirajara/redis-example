@@ -15,11 +15,13 @@ redis.flushdb()
 chaves = ['dependente', 'funcionario']
 valores = {
     'dependente': [
+			"id",
 			"nome",
 			"data_nascimento",
 			"funcionario_id"
     ],
     'funcionario': [
+			"id",
 			"nome",
 			"logradouro",
 			"numero",
@@ -53,7 +55,8 @@ def select_all_from_table(table):
 
 		i += 1
 
-setup_tables_from_json()
-# Não tem funções tipo select * from user
-select_all_from_table('dependente')
-select_all_from_table('funcionario')
+if __name__ == '__main__':
+	setup_tables_from_json()
+	# Não tem funções tipo select * from user
+	select_all_from_table('dependente')
+	select_all_from_table('funcionario')
